@@ -9,10 +9,12 @@ pipeline {
 
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing..'
-            }
+                echo 'Build start..'
+                
+                sh "mvn -version"
+            
         }
         stage('Deploy') {
             steps {
