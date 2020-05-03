@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Build start..'
                 
-                sh "mvn -version"
+                sh "sudo mvn -version"
             
         }
         stage('Deploy') {
