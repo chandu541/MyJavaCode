@@ -12,8 +12,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build start..'
-                
                 sh "sudo mvn -version"
+                {
+                    sh ''mvn clean compile"
+                }
             
         }
         stage('Deploy') {
