@@ -9,21 +9,6 @@ pipeline {
 
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Build start..'
-                sh "sudo mvn -version"
-                withMaven(maven : 'Maven_home')
-                {
-                    sh "mvn clean compile"
-                }
-            }
-            
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        
     }
 }
