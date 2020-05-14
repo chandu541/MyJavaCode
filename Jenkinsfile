@@ -21,6 +21,7 @@ pipeline {
         stage('Deploy to  Tomcat')
         {
             steps{
+                echo 'tomcat'
                 
             }
         }
