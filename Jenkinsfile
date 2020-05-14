@@ -14,7 +14,7 @@ pipeline {
             steps{
                 withMaven(maven : 'MyMaven')
                 {
-                    sh 'mvn clean compile'
+                    bat 'mvn clean compile'
                 }
             }
         }
