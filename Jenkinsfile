@@ -9,6 +9,15 @@ pipeline {
 
             }
         }
+        stage('Build')
+        {
+            steps{
+                withMaven(maven : 'MyMaven')
+                {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
         
     }
 }
