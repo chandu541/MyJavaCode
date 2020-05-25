@@ -1,6 +1,5 @@
 # Pull base image
-From tomcat:8-jre8
-
+FROM tomcat:8.0-alpine
+ADD target/Elibrary-0.0.1-SNAPSHOT /usr/local/tomcat/webapps/
 EXPOSE 8080
-# Copy to images tomcat path
-ADD dockerwar.war /usr/local/tomcat/webapps/
+CMD ["catalina.sh", "run"]
