@@ -14,20 +14,27 @@ pipeline {
             steps{
                 withMaven(maven : 'MyMaven')
                 {
-                    sh 'mvn clean package'
+                    bat 'mvn clean package'
                 }
             }
         }
-        stage('Deploy to Docker')
+      //  stage('Deploy to Docker')
+      //  {
+      //      steps{
+      //          echo "Delete old container"
+      //          sh "/usr/bin/docker rm -f $(usr/bin/docker ps -a)"
+                // sh "/usr/bin/docker rm -f Java"
+      //          echo "Docker Image cretion"
+      //          sh "/usr/bin/docker build -t Java ${WORKSPACE}/."
+      //          echo "conver docker image to docker container"
+      //          sh "/usr/bin/docker run -dit --name Java -p 9090:8080 Java:latest"       
+      //      }
+      //  }
+        stage("Deploy to Tomcat")
         {
             steps{
-                echo "Delete old container"
-                sh "/usr/bin/docker rm -f $(usr/bin/docker ps -a)"
-                // sh "/usr/bin/docker rm -f Java"
-                echo "Docker Image cretion"
-                sh "/usr/bin/docker build -t Java ${WORKSPACE}/."
-                echo "conver docker image to docker container"
-                sh "/usr/bin/docker run -dit --name Java -p 9090:8080 Java:latest"       
+                echo "Tomcat deplyment from jenkins start"
+                
             }
         }
         
