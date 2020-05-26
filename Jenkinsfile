@@ -18,11 +18,16 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to  Tomcat')
+        stage('Deploy to Docker')
         {
             steps{
-                echo 'tomcat'
-                
+                echo "Delete old container"
+                sh "/usr/bin/docker rm -f $(usr/bin/docker ps -a)"
+                // sh "/usr/bin/docker rm -f Java"
+                echo "Docker Image cretion"
+                sh "/usr/bin/docker build -t Java ${WORKSPACE}/."
+                echo "conver docker image to docker container"
+                sh "/usr/bin/docker run -dit --name Java -p 9090:8080 Java:latest"       
             }
         }
         
