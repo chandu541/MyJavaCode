@@ -34,6 +34,7 @@ pipeline {
         {
             steps{
                 echo "Tomcat deplyment from jenkins start"
+                bat "C:\Program Files (x86)\Jenkins\workspace\Java\target\*.war C:\Users\chavula\Desktop\DevopsIMG\New folder\apache-tomcat-10.0.0-M5-windows-x64\apache-tomcat-10.0.0-M5\webapps\**"
                 
             }
         }
