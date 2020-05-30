@@ -36,7 +36,7 @@ pipeline {
             steps{
                 withMaven(maven : 'MyMaven')
                 {
-                    bat 'mvn tomcat:deploy'
+                    bat 'mvn tomcat7:deploy'
                 }
             }
         }
