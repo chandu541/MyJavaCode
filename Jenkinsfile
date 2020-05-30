@@ -31,29 +31,30 @@ pipeline {
       //      }
       //  }
         
-           stage('Deploy')
-        {
-            steps{
-                withMaven(maven : 'MyMaven')
-                {
-                    bat 'mvn tomcat7:deploy'
-                }
-            }
-        }
-        
-      //  stage("Deploy to Tomcat")
+       //    stage('Deploy')
        // {
-       //     steps{
+      //      steps{
+              
+        //        withMaven(maven : 'MyMaven')
+        //        {
+        //            bat 'mvn tomcat7:deploy'
+        //        }
+        //    }
+      //  }
+        
+        stage("Deploy to Tomcat")
+       {
+            steps{
                 
-      //          echo "Tomcat deplyment from jenkins start"
+               echo "Tomcat deplyment from jenkins start"
        //          bat 'mvn deploy'
                 
-              //  bat "C:"
-              //  bat "cd C:\Program Files (x86)\Jenkins\workspace\Java\target"
-              //  bat "copy *.war C:\Users\chavula\Desktop\DevopsIMG\Folder\apache-tomcat-8.5.55-windows-x64\apache-tomcat-8.5.55\webapps"
+               // bat "C:"
+               // bat "cd C:\Program Files (x86)\Jenkins\workspace\Java\target"
+                bat "copy 'C:\Program Files (x86)\Jenkins\workspace\Java\target\*.war' 'C:\Users\chavula\Desktop\DevopsIMG\Folder\apache-tomcat-8.5.55-windows-x64\apache-tomcat-8.5.55\webapps\'"
                 
-       //     }
-      //  }
+            }
+       }
         
     }
 }
