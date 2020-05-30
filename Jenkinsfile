@@ -51,9 +51,11 @@ pipeline {
        //          bat 'mvn deploy'
                 
                // bat "C:"
-               // bat "cd C:\Program Files (x86)\Jenkins\workspace\Java\target"
-               bat "'copy C:\\Program Files (x86)\\Jenkins\\workspace\\Java\\target\\*.war C:\\Users\\chavula\\Desktop\\DevopsIMG\\Folder\\apache-tomcat-8.5.55-windows-x64\\apache-tomcat-8.5.55\\webapps\\'"
-              //  bat "%WORKSPACE%\\target\\*.war C:\\Users\\chavula\\Desktop\\DevopsIMG\\Folder\\apache-tomcat-8.5.55-windows-x64\\apache-tomcat-8.5.55\\webapps\\"
+                bat "'cd C:\\Program Files (x86)\\Jenkins\\workspace\\Java\\target\\'"
+             //  bat "'copy C:\\Program Files (x86)\\Jenkins\\workspace\\Java\\target\\*.war C:\\Users\\chavula\\Desktop\\DevopsIMG\\Folder\\apache-tomcat-8.5.55-windows-x64\\apache-tomcat-8.5.55\\webapps\\'"
+               bat "'copy \\*.war C:\\Users\\chavula\\Desktop\\DevopsIMG\\Folder\\apache-tomcat-8.5.55-windows-x64\\apache-tomcat-8.5.55\\webapps\\'"
+
+                //  bat "%WORKSPACE%\\target\\*.war C:\\Users\\chavula\\Desktop\\DevopsIMG\\Folder\\apache-tomcat-8.5.55-windows-x64\\apache-tomcat-8.5.55\\webapps\\"
             
              //  deploy contextPath: 'http://localhost:9090/manager/text', war: '%WORKSPACE%\\\\target\\\\*.war' 
                 
