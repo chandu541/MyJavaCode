@@ -41,11 +41,7 @@ pipeline {
         //        }
         //    }
       //  }
-        
-        stage("artifact")
-        {
-            archive 'trget/*.war'
-        }
+       
         
         stage("Deploy to Tomcat")
        {
