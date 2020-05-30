@@ -30,19 +30,30 @@ pipeline {
       //          sh "/usr/bin/docker run -dit --name Java -p 9090:8080 Java:latest"       
       //      }
       //  }
-        stage("Deploy to Tomcat")
+        
+           stage('Deploy')
         {
             steps{
+                withMaven(maven : 'MyMaven')
+                {
+                    bat 'mvn tomcat:deploy'
+                }
+            }
+        }
+        
+      //  stage("Deploy to Tomcat")
+       // {
+       //     steps{
                 
-                echo "Tomcat deplyment from jenkins start"
-                 bat 'mvn deploy'
+      //          echo "Tomcat deplyment from jenkins start"
+       //          bat 'mvn deploy'
                 
               //  bat "C:"
               //  bat "cd C:\Program Files (x86)\Jenkins\workspace\Java\target"
               //  bat "copy *.war C:\Users\chavula\Desktop\DevopsIMG\Folder\apache-tomcat-8.5.55-windows-x64\apache-tomcat-8.5.55\webapps"
                 
-            }
-        }
+       //     }
+      //  }
         
     }
 }
