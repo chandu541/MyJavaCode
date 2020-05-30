@@ -53,7 +53,7 @@ pipeline {
                 bat 'C:'
                 echo "before change directort"
                 bat 'pwd'
-                bat 'cd C:\\Program Files (x86)\\Jenkins\\workspace\\Java\\target\\'
+                bat 'cd target'
                 echo "after change directory"
                 bat 'pwd'
              //  bat "'copy C:\\Program Files (x86)\\Jenkins\\workspace\\Java\\target\\*.war C:\\Users\\chavula\\Desktop\\DevopsIMG\\Folder\\apache-tomcat-8.5.55-windows-x64\\apache-tomcat-8.5.55\\webapps\\'"
